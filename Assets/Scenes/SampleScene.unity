@@ -494,7 +494,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 608353459}
-  - component: {fileID: 608353458}
+  - component: {fileID: 608353462}
+  - component: {fileID: 608353461}
+  - component: {fileID: 608353460}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -502,20 +504,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &608353458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 608353457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a1e183530f4d794493450b94809b580, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CounterController
-  _delay: 0.5
-  _counterText: {fileID: 880207176}
 --- !u!4 &608353459
 Transform:
   m_ObjectHideFlags: 0
@@ -531,6 +519,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &608353460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608353457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83567ed00e547664ba8893918d8dee74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputReader
+--- !u!114 &608353461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608353457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12f46ba22df969d49a7540bfde16815b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Counter
+  _delay: 0.5
+  _inputReader: {fileID: 608353460}
+--- !u!114 &608353462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608353457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 973d96c6e7e8b28428a46315fd8730b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CounterView
+  _counter: {fileID: 608353461}
+  _textComponent: {fileID: 880207176}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
