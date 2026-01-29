@@ -3,13 +3,16 @@ using UnityEngine;
 
 public class InputReader : MonoBehaviour
 {
-    public event Action MouseClicked;
+    [Header("Settings")]
+    [SerializeField] private int _interactionButtonIndex = 0;
+
+    public event Action InteractionPerformed;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(_interactionButtonIndex))
         {
-            MouseClicked?.Invoke();
+            InteractionPerformed?.Invoke();
         }
     }
 }

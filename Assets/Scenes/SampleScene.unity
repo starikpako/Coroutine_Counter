@@ -531,6 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83567ed00e547664ba8893918d8dee74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputReader
+  _interactionButtonIndex: 0
 --- !u!114 &608353461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,7 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Counter
   _delay: 0.5
-  _inputReader: {fileID: 608353460}
+  _inputReader: {fileID: 0}
 --- !u!114 &608353462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,8 +558,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 973d96c6e7e8b28428a46315fd8730b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CounterView
-  _counter: {fileID: 608353461}
-  _textComponent: {fileID: 880207176}
+  _counter: {fileID: 0}
+  _textComponent: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

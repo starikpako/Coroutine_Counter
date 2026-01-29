@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Counter : MonoBehaviour
 {
-    [Header("Настройки")]
+    [Header("Settings")]
     [SerializeField] private float _delay = 0.5f;
-
     [SerializeField] private InputReader _inputReader;
 
     public event Action<int> CountChanged;
@@ -19,7 +18,7 @@ public class Counter : MonoBehaviour
     {
         if (_inputReader != null)
         {
-            _inputReader.MouseClicked += OnMouseClicked;
+            _inputReader.InteractionPerformed += OnInteraction;
         }
     }
 
@@ -27,11 +26,11 @@ public class Counter : MonoBehaviour
     {
         if (_inputReader != null)
         {
-            _inputReader.MouseClicked -= OnMouseClicked;
+            _inputReader.InteractionPerformed -= OnInteraction;
         }
     }
 
-    private void OnMouseClicked()
+    private void OnInteraction()
     {
         _isCounting = !_isCounting;
 
@@ -51,15 +50,15 @@ public class Counter : MonoBehaviour
 
     private IEnumerator CountRoutine()
     {
+        var wait = new WaitForSeconds(_delay);
+
         while (_isCounting)
         {
-            yield return new WaitForSeconds(_delay);
+            yield return wait;
 
             _currentValue++;
 
             CountChanged?.Invoke(_currentValue);
-
-            Debug.Log($"Logic: Значение {_currentValue}");
         }
     }
 }
